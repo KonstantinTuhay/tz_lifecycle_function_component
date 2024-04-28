@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import LifecycleComponent from "./LifecycleComponent ";
+// import LifecycleComponent from "./LifecycleComponent ";
+import Mems from "./Mems";
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -9,13 +10,13 @@ const App = () => {
         CLICK
       </button>{" "}
       <br />
-      <p>{count}</p>
+      <Mems count={count} />
       <br />
-      {count % 2 === 0 ? (
+      {/* {count % 2 === 0 ? (
         <LifecycleComponent />
       ) : (
         <p>Кликни, чтобы ещё раз появилось</p>
-      )}
+      )} */}
     </>
   );
 };
