@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 
 const LifecycleComponent = () => {
   const [dog, setDog] = useState(null);
+  const [againCount, setAgainCount] = useState(0);
+
+  const otherCount = () => {
+    setAgainCount(() => againCount + 1);
+  };
 
   useEffect(() => {
     console.log("-------------------Mounting-------------------");
@@ -12,7 +17,7 @@ const LifecycleComponent = () => {
 
   useEffect(() => {
     console.log("-------------------Update-------------------");
-  });
+  }, [dog]);
 
   useEffect(() => {
     return () => {
@@ -23,6 +28,9 @@ const LifecycleComponent = () => {
   console.log("-------------------Render-------------------");
   return (
     <>
+      <button onClick={otherCount}>otherCount</button>
+      <p>{againCount}</p>
+
       <img src={dog} alt="dogi"></img>
     </>
   );
