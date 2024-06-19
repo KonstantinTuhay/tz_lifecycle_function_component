@@ -12,7 +12,7 @@ const LifecycleComponent = () => {
     console.log("-------------------Mounting-------------------");
     fetch("https://dog.ceo/api/breeds/image/random")
       .then((data) => data.json())
-      .then((data) => setTimeout(() => setDog(data.message), 1000));
+      .then((data) => setTimeout(() => setDog(data.message), 3000));
   }, []);
 
   useEffect(() => {

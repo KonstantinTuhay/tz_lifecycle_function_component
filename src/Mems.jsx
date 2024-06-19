@@ -1,18 +1,17 @@
-import React from "react";
-import LifecycleComponent from "./LifecycleComponent ";
+import React, { memo } from "react";
 
-const Mems = React.memo(
+const Mems = memo(
   ({ count }) => {
-    console.log("--Memo--");
+    // console.log("--Memo--");
     return (
       <>
         <p>{count}</p>
-        {count % 2 === 0 ? <LifecycleComponent /> : <p></p>}
       </>
     );
   },
   (prevProps, nextProps) => {
-    nextProps % 2 === 0 ? <LifecycleComponent /> : <p></p>;
+    // console.log("nextprops", nextProps);
+    return nextProps.count % 2 === 0 ? true : false;
   }
 );
 
